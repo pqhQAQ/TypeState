@@ -1,0 +1,6 @@
+method: T.test:117880521
+665566283:this := @this: T
+2077684805:a := @parameter0: T
+1861029514:this.<T: T s> = a
+2020162851:$r0 = this.<T: T s>
+1160577687:return $r0
