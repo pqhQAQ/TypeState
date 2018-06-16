@@ -1,6 +1,6 @@
-method: T.test:937852212
-1168232895:this := @this: T
-47281744:a := @parameter0: T
-2052287174:this.<T: T s> = a
-1079216521:$r0 = this.<T: T s>
-745185885:return $r0
+method: T.test:1439975948
+1131822603:this := @this: T
+132343495:a := @parameter0: T
+293645794:this.<T: T s> = a
+516048560:$r0 = this.<T: T s>
+1689181334:return $r0

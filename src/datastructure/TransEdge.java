@@ -25,12 +25,17 @@ public class TransEdge {
 	}
 	
 	public String print(){
-		String path = start.getName()+"("+start.getHashcode()+") -> "+end.getName()+"("+end.getHashcode()+") \r\n";
+		String path = start.getName()+"("+Math.abs(start.getHashcode())+") -> "+end.getName()+"("+Math.abs(end.getHashcode())+")\r\n";
+		return path;
+	}
+	
+	public String printTemp(){
+		String path = start.getName()+"_"+start.getHashcode()+" -> "+end.getName()+"_"+end.getHashcode()+"\r\n";
 		return path;
 	}
 	
 	public String printDot(){
-		String path = start.getName()+"_"+start.getHashcode()+" -> "+end.getName()+"_"+end.getHashcode()+" \r\n";
+		String path = start.getName()+"_"+Math.abs(start.getHashcode())+" -> "+end.getName()+"_"+Math.abs(end.getHashcode())+"\r\n";
 		return path;
 	}
 }

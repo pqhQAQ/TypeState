@@ -48,6 +48,12 @@ public class TypeGraphList {
 		}
 	}
 	
+	public void simplifyGraph(){
+		for(TypeGraph tg : tgl){
+			tg.simplifyGraph();
+		}
+	}
+	
 	public void print(String path){
 		for(TypeGraph tg : tgl){
 			String filepath = path+soot_method.getDeclaringClass().getName()+"."+soot_method.getName()+"."+tg.varname+".txt";

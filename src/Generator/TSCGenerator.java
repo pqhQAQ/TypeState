@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 import client.IntraGenerator;
 import datastructure.TypeGraph;
 import datastructure.TypeGraphList;
+import simplifyGraph.simplifyGraph;
 import soot.Body;
 import soot.BodyTransformer;
 import soot.Local;
@@ -77,8 +78,11 @@ public class TSCGenerator extends BodyTransformer {
 				processStmt(succst, succst);
 			}
 			fileWriter.close();
-			//typegraph_list.print("D:/project/workspace/TypeState/sootOutput/");
-			typegraph_list.printDot("D:/project/workspace/TypeState/sootOutput/");
+			//typegraph_list.simplifyGraph();
+			typegraph_list.print("D:/project/workspace/TypeState/sootOutput/allGraph/");
+			simplifyGraph sg = new simplifyGraph();
+			sg.simplify("D:/project/workspace/TypeState/sootOutput/allGraph/");
+			//typegraph_list.printDot("D:/project/workspace/TypeState/sootOutput/");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -103,30 +107,30 @@ public class TSCGenerator extends BodyTransformer {
 
 	private void processStmt(Stmt s, Stmt succst) {
 		if (s instanceof ReturnVoidStmt) {
-			typegraph_list.transAll(s.hashCode(), -sm.hashCode());
+			typegraph_list.transAll(s.hashCode(), sm.equivHashCode());
 			return;
 		}
 		if (s instanceof GotoStmt) {
 			GotoStmt gos = (GotoStmt) s;
 			Unit target = gos.getTarget();
-			typegraph_list.transAll(s.hashCode(), target.hashCode());
+			typegraph_list.transAll(-s.hashCode(), target.hashCode());
 			return;
 		}
 		if (s instanceof IfStmt) {
 			IfStmt ifs = (IfStmt) s;
 			Stmt target = ifs.getTarget();
-			typegraph_list.transAll(s.hashCode(), target.hashCode());
-			typegraph_list.transAll(s.hashCode(), succst.hashCode());
+			typegraph_list.transAll(-s.hashCode(), target.hashCode());
+			typegraph_list.transAll(-s.hashCode(), succst.hashCode());
 			return;
 		}
 		if (s instanceof TableSwitchStmt) {
 			TableSwitchStmt tst = (TableSwitchStmt) s;
 			Unit defaulttarget = tst.getDefaultTarget();
-			typegraph_list.transAll(s.hashCode(), defaulttarget.hashCode());
+			typegraph_list.transAll(-s.hashCode(), defaulttarget.hashCode());
 			Iterator targets = tst.getTargets().iterator();
 			for (; targets.hasNext();) {
 				Unit target = (Unit) targets.next();
-				typegraph_list.transAll(s.hashCode(), target.hashCode());
+				typegraph_list.transAll(-s.hashCode(), target.hashCode());
 			}
 			return;
 		}
@@ -139,16 +143,17 @@ public class TSCGenerator extends BodyTransformer {
 			return;
 		}
 		if (s instanceof RetStmt) {
-			typegraph_list.transAll(s.hashCode(), -sm.hashCode());
+			typegraph_list.transAll(s.hashCode(), sm.equivHashCode());
 			return;
 		}
 		if (s instanceof NopStmt) {
-			typegraph_list.transAll(s.hashCode(), -sm.hashCode());
+			typegraph_list.transAll(s.hashCode(), sm.equivHashCode());
 			return;
 		}
 		if (s.containsInvokeExpr()) {
 			InvokeExpr ie = s.getInvokeExpr();
 			if (IntraGenerator.InterestMethod.contains(ie.getMethod().toString()) && ie instanceof InstanceInvokeExpr) {
+				Value b = ((InstanceInvokeExpr) ie).getBase();
 				Local base = (Local)((InstanceInvokeExpr) ie).getBase();
 				if(ie.toString().contains("<init>") && succst instanceof AssignStmt){
 					Value lhs = ((DefinitionStmt) succst).getLeftOp();
@@ -157,7 +162,7 @@ public class TSCGenerator extends BodyTransformer {
 						base = (Local)lhs;
 					}
 				}
-				if(interestLocal.contains(base)){
+				if(contains(base.getName())){
 					typegraph_list.transMethod(base.getName(), ie.getMethod().toString(), s.hashCode(), succst.hashCode());
 				}
 			} else
@@ -166,6 +171,14 @@ public class TSCGenerator extends BodyTransformer {
 		}
 		typegraph_list.transAll(s.hashCode(), succst.hashCode());
 		return;
+	}
+	
+	private boolean contains(String name) {
+		for (Local local : interestLocal) {
+			if (local.getName().equals(name))
+				return true;
+		}
+		return false;
 	}
 
 }

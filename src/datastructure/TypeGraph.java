@@ -3,6 +3,7 @@ package datastructure;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -49,6 +50,51 @@ public class TypeGraph {
 		}
 	}
 	
+	public void simplifyGraph(){
+		int stateNum = allStates.length;
+		if(transedges.size()<=stateNum){
+			return;
+		}
+		TransEdge[] now = new TransEdge[stateNum];
+		TransEdge[] next = new TransEdge[stateNum];
+		//Iterator<TransEdge> it = transedges.iterator();
+		for(int i = 0; i < stateNum; i++){
+			now[i] = transedges.get(i);
+		}
+		for(int i = stateNum; i < transedges.size(); ){
+			for(int j = 0; j < stateNum; j++){
+				next[j] = transedges.get(i+j);
+			}
+			int equ = 0;
+			for(; equ < stateNum; equ++){
+				if(!edgeDirect(now[equ], next[equ])){
+					break;
+				}
+			}
+			if(equ == stateNum){
+				for(int j = 0; j < stateNum; j++){
+					now[j].end.setHashcode(next[j].end.getHashcode());
+					transedges.remove(next[j]);
+				}
+			}else{
+				for(int j = 0; j < stateNum; j++){
+					now[j] = next[j];
+				}
+				i = i+stateNum;
+			}
+		}
+	}
+	
+	public boolean edgeDirect(TransEdge first, TransEdge sec){
+		if(!first.start.getName().equals(first.end.getName()))
+			return false;
+		if(!sec.start.getName().equals(sec.end.getName()))
+			return false;
+		if(!(first.end.equalPoint(sec.start)))
+			return false;
+		return true;
+	}
+	
 	public void print(String file_path, SootMethod sm){
 		String regEx="[`~!@#$%^&*()+=|{}';',\\[\\]<>?~£¡@#£¤%¡­¡­&*£¨£©¡ª¡ª+|{}¡¾¡¿¡®£»£º¡±¡°¡¯¡££¬¡¢£¿]"; 
 		Pattern p = Pattern.compile(regEx); 
@@ -60,8 +106,12 @@ public class TypeGraph {
 				file.createNewFile();
 			FileWriter fileWriter = new FileWriter(file);
 			fileWriter.write("method: "+sm.getDeclaringClass().getName()+"."+sm.getName()+":"+sm.hashCode()+"\r\n");
+			fileWriter.write(allStates.length+"\r\n");
+			for(String state : allStates){
+				fileWriter.write(state+"\r\n");
+			}
 			for(TransEdge transedge : transedges){
-				fileWriter.write(transedge.print());
+				fileWriter.write(transedge.printTemp());
 			}
 			fileWriter.close();
 		}catch(Exception e){
@@ -82,7 +132,7 @@ public class TypeGraph {
 			fileWriter.write("digraph "+sm.getDeclaringClass().getName()+"_"+sm.getName()+"_"+sm.hashCode()+" {"+"\r\n");
 			for(TransEdge transedge : transedges){
 				if(!transedge.start.getName().equals(transedge.end.getName())){
-					fileWriter.write(transedge.start.getName()+"_"+transedge.start.getHashcode()+" -> "+transedge.start.getName()+"_"+transedge.end.getHashcode()+"[style=dashed]"+" \r\n");
+					fileWriter.write(transedge.start.getName()+"_"+transedge.start.getHashcode()+" -> "+transedge.start.getName()+"_"+transedge.end.getHashcode()+"[color=\"white\"]"+" \r\n");
 				}
 				fileWriter.write(transedge.printDot());
 			}
