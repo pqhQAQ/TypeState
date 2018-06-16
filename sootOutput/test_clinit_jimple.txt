@@ -1,5 +1,5 @@
-method: test.<clinit>:108927630
-382467053:$r0 = new java.util.ArrayList
-406422307:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
-852388197:<test: java.util.List tlist> = $r0
-225017842:return
+method: test.<clinit>:1760044542
+1369913503:$r0 = new java.util.ArrayList
+283632623:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+660380534:<test: java.util.List tlist> = $r0
+820147242:return

@@ -1,33 +1,33 @@
-method: test.main:1112132817
-439569641:args := @parameter0: java.lang.String[]
-983465072:ar = newarray (T)[2]
-2063317792:$r0 = new T
-1280161282:specialinvoke $r0.<T: void <init>()>()
-32007281:c1 = $r0
-1075460017:$r0 = new T
-1873876976:specialinvoke $r0.<T: void <init>()>()
-1402652377:c2 = $r0
-1450507120:$r1 = <test: java.util.List tlist>
-1010667469:interfaceinvoke $r1.<java.util.List: boolean add(java.lang.Object)>(c1)
-1334952839:$r1 = <test: java.util.List tlist>
-1839987360:interfaceinvoke $r1.<java.util.List: boolean add(java.lang.Object)>(c2)
-888659219:c1.<T: int a> = 0
-1061032142:c2.<T: int a> = 1
-230824171:c2 = c1
-212292599:c1.<T: int a> = 2
-699630124:in = staticinvoke <test: int index(int)>(1)
-1210526743:$r1 = <test: java.util.List tlist>
-563437537:$r2 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>(in)
-38012701:c = (T) $r2
-1311870967:c1 = null
-705269348:c2 = c1
-355283546:c3 = virtualinvoke c2.<T: T interfunc(T,T)>(c1, c2)
-1727652437:c1 = c3
-317652900:ar[1] = c1
-1054127232:c2 = ar[0]
-1114024860:if c1 == null goto c2 = null
-44883338:c2 = c1
-398035744:goto [?= ar = null]
-789585829:c2 = null
-1064826090:ar = null
-1550864179:return
+method: test.main:189262156
+1127971736:args := @parameter0: java.lang.String[]
+1485920794:ar = newarray (T)[2]
+783453795:$r0 = new T
+658567942:specialinvoke $r0.<T: void <init>()>()
+420684556:c1 = $r0
+929166768:$r0 = new T
+1028332205:specialinvoke $r0.<T: void <init>()>()
+230978379:c2 = $r0
+1550665724:$r1 = <test: java.util.List tlist>
+454327188:interfaceinvoke $r1.<java.util.List: boolean add(java.lang.Object)>(c1)
+675758192:$r1 = <test: java.util.List tlist>
+1572683631:interfaceinvoke $r1.<java.util.List: boolean add(java.lang.Object)>(c2)
+1878750663:c1.<T: int a> = 0
+86430399:c2.<T: int a> = 1
+1101210990:c2 = c1
+1940598322:c1.<T: int a> = 2
+523548449:in = staticinvoke <test: int index(int)>(1)
+1038280584:$r1 = <test: java.util.List tlist>
+1055176659:$r2 = interfaceinvoke $r1.<java.util.List: java.lang.Object get(int)>(in)
+138145138:c = (T) $r2
+1922540027:c1 = null
+1649875409:c2 = c1
+1561656109:c3 = virtualinvoke c2.<T: T interfunc(T,T)>(c1, c2)
+897913011:c1 = c3
+2042109998:ar[1] = c1
+2115045391:c2 = ar[0]
+1190861735:if c1 == null goto c2 = null
+1301876269:c2 = c1
+931690293:goto [?= ar = null]
+806763397:c2 = null
+1709927669:ar = null
+1128168729:return

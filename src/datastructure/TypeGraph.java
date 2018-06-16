@@ -68,4 +68,28 @@ public class TypeGraph {
 			e.printStackTrace();
 		}
 	}
+	
+	public void printDot(String file_path, SootMethod sm){
+		String regEx="[`~!@#$%^&*()+=|{}';',\\[\\]<>?~£¡@#£¤%¡­¡­&*£¨£©¡ª¡ª+|{}¡¾¡¿¡®£»£º¡±¡°¡¯¡££¬¡¢£¿]"; 
+		Pattern p = Pattern.compile(regEx); 
+		Matcher m = p.matcher(file_path);
+		file_path = m.replaceAll("").trim();
+		File file = new File(file_path);
+		try{
+			if(!file.exists())
+				file.createNewFile();
+			FileWriter fileWriter = new FileWriter(file);
+			fileWriter.write("digraph "+sm.getDeclaringClass().getName()+"_"+sm.getName()+"_"+sm.hashCode()+" {"+"\r\n");
+			for(TransEdge transedge : transedges){
+				if(!transedge.start.getName().equals(transedge.end.getName())){
+					fileWriter.write(transedge.start.getName()+"_"+transedge.start.getHashcode()+" -> "+transedge.start.getName()+"_"+transedge.end.getHashcode()+"[style=dashed]"+" \r\n");
+				}
+				fileWriter.write(transedge.printDot());
+			}
+			fileWriter.write("} \r\n");
+			fileWriter.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 }

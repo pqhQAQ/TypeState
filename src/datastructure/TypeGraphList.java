@@ -54,4 +54,11 @@ public class TypeGraphList {
 			tg.print(filepath,soot_method);
 		}
 	}
+	
+	public void printDot(String path){
+		for(TypeGraph tg : tgl){
+			String filepath = path+soot_method.getDeclaringClass().getName()+"."+soot_method.getName()+"."+tg.varname+".txt";
+			tg.printDot(filepath,soot_method);
+		}
+	}
 }

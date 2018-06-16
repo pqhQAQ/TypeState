@@ -3,8 +3,8 @@ package datastructure;
 import datastructure.Point;
 
 public class TransEdge {
-	private Point end;
-	private Point start;
+	public Point end;
+	public Point start;
 	
 	public void addEnd(Point base) {
 		// TODO Auto-generated method stub
@@ -26,6 +26,11 @@ public class TransEdge {
 	
 	public String print(){
 		String path = start.getName()+"("+start.getHashcode()+") -> "+end.getName()+"("+end.getHashcode()+") \r\n";
+		return path;
+	}
+	
+	public String printDot(){
+		String path = start.getName()+"_"+start.getHashcode()+" -> "+end.getName()+"_"+end.getHashcode()+" \r\n";
 		return path;
 	}
 }

@@ -1,15 +1,15 @@
-method: test.index:2066075478
-403051874:a := @parameter0: int
-27741482:i = 0
-247136575:goto [?= $r3 = <test: java.util.List tlist>]
-391042727:$r0 = <test: java.util.List tlist>
-814007958:$r1 = interfaceinvoke $r0.<java.util.List: java.lang.Object get(int)>(i)
-1560918716:$r2 = (T) $r1
-700628060:$i0 = $r2.<T: int a>
-1197629948:if $i0 != a goto i = i + 1
-803019734:return i
-1565431590:i = i + 1
-1799676934:$r3 = <test: java.util.List tlist>
-2010545390:$i1 = interfaceinvoke $r3.<java.util.List: int size()>()
-425995691:if i < $i1 goto $r0 = <test: java.util.List tlist>
-2045821149:return -1
+method: test.index:505774685
+865058941:a := @parameter0: int
+1530317776:i = 0
+1786704760:goto [?= $r3 = <test: java.util.List tlist>]
+883065319:$r0 = <test: java.util.List tlist>
+1819347105:$r1 = interfaceinvoke $r0.<java.util.List: java.lang.Object get(int)>(i)
+1894627749:$r2 = (T) $r1
+121059727:$i0 = $r2.<T: int a>
+950608282:if $i0 != a goto i = i + 1
+1728413448:return i
+433527567:i = i + 1
+563216904:$r3 = <test: java.util.List tlist>
+2026073199:$i1 = interfaceinvoke $r3.<java.util.List: int size()>()
+149059364:if i < $i1 goto $r0 = <test: java.util.List tlist>
+91455103:return -1

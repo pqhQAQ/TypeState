@@ -1,16 +1,16 @@
-method: T.testlist:2142123655
-132343495:this := @this: T
-1651545820:$r0 = new java.io.File
-946955143:specialinvoke $r0.<java.io.File: void <init>(java.lang.String)>("")
-473780484:file = $r0
-2106715159:$r1 = new java.io.FileWriter
-1050883265:specialinvoke $r1.<java.io.FileWriter: void <init>(java.io.File)>(file)
-1289521927:fileWriter = $r1
-590061565:$r1 = new java.io.FileWriter
-2011613519:specialinvoke $r1.<java.io.FileWriter: void <init>(java.lang.String)>("")
-1353359112:fileWriter2 = $r1
-1864754667:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>("fw")
-2089988841:virtualinvoke fileWriter2.<java.io.FileWriter: void write(java.lang.String)>("test")
-835456086:virtualinvoke fileWriter.<java.io.FileWriter: void close()>()
-1381233299:virtualinvoke fileWriter2.<java.io.FileWriter: void close()>()
-89832223:return
+method: T.testlist:1227621553
+1699393883:this := @this: T
+180486481:$r0 = new java.io.File
+1348303498:specialinvoke $r0.<java.io.File: void <init>(java.lang.String)>("")
+689447742:file = $r0
+1873924229:$r1 = new java.io.FileWriter
+1766572077:specialinvoke $r1.<java.io.FileWriter: void <init>(java.io.File)>(file)
+1815478364:fileWriter = $r1
+1297207172:$r1 = new java.io.FileWriter
+328066535:specialinvoke $r1.<java.io.FileWriter: void <init>(java.lang.String)>("")
+1223731896:fileWriter2 = $r1
+1197047957:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>("fw")
+497982732:virtualinvoke fileWriter2.<java.io.FileWriter: void write(java.lang.String)>("test")
+216404359:virtualinvoke fileWriter.<java.io.FileWriter: void close()>()
+1562078941:virtualinvoke fileWriter2.<java.io.FileWriter: void close()>()
+873176812:return

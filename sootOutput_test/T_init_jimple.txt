@@ -1,0 +1,4 @@
+method: T.<init>:1811974571
+1993045790:this := @this: T
+626128227:specialinvoke this.<java.lang.Object: void <init>()>()
+1781428555:return

@@ -1,4 +1,4 @@
-method: test.<init>:1090610166
-810322012:this := @this: test
-305372633:specialinvoke this.<java.lang.Object: void <init>()>()
-2059410148:return
+method: test.<init>:1628863616
+1552335978:this := @this: test
+2531395:specialinvoke this.<java.lang.Object: void <init>()>()
+1742966472:return

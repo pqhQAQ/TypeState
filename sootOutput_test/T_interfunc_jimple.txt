@@ -1,0 +1,7 @@
+method: T.interfunc:373487986
+773943598:this := @this: T
+61168539:a := @parameter0: T
+1562451707:b := @parameter1: T
+1329924716:if a == null goto return null
+232411003:return a
+590031384:return null

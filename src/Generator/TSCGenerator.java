@@ -77,7 +77,8 @@ public class TSCGenerator extends BodyTransformer {
 				processStmt(succst, succst);
 			}
 			fileWriter.close();
-			typegraph_list.print("D:/project/workspace/TypeState/sootOutput/");
+			//typegraph_list.print("D:/project/workspace/TypeState/sootOutput/");
+			typegraph_list.printDot("D:/project/workspace/TypeState/sootOutput/");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
