@@ -1,0 +1,77 @@
+method: pegraph.datastructure.PegIntra.exportMapGraph:951578955
+920015469:this := @this: pegraph.datastructure.PegIntra
+817729083:path := @parameter0: java.lang.String
+1824840828:$r0 = new java.lang.StringBuilder
+1708519117:$r1 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(path)
+1076955382:specialinvoke $r0.<java.lang.StringBuilder: void <init>(java.lang.String)>($r1)
+1883683902:$r2 = this.<pegraph.datastructure.PegIntra: soot.SootMethod soot_method>
+871416840:$r3 = virtualinvoke $r2.<soot.SootMethod: soot.SootClass getDeclaringClass()>()
+64357340:$r4 = virtualinvoke $r3.<soot.SootClass: java.lang.String getName()>()
+1469538939:$r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4)
+1345001864:$r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".")
+513239346:$r2 = this.<pegraph.datastructure.PegIntra: soot.SootMethod soot_method>
+1719361870:$r4 = virtualinvoke $r2.<soot.SootMethod: java.lang.String getName()>()
+774995058:$r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4)
+1613200097:$r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_map.txt")
+1270711669:file_path = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>()
+661363087:regEx = "[`~!@#$%^&*()+=|{}\';\',\\[\\]<>?~\uff01@#\uffe5%\u2026\u2026&*\uff08\uff09\u2014\u2014+|{}\u3010\u3011\u2018\uff1b\uff1a\u201d\u201c\u2019\u3002\uff0c\u3001\uff1f]"
+946045555:p = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>(regEx)
+1302111244:m = virtualinvoke p.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(file_path)
+121108470:$r5 = virtualinvoke m.<java.util.regex.Matcher: java.lang.String replaceAll(java.lang.String)>("")
+578109050:file_path = virtualinvoke $r5.<java.lang.String: java.lang.String trim()>()
+1062784322:$r6 = new java.io.File
+104453476:specialinvoke $r6.<java.io.File: void <init>(java.lang.String)>(file_path)
+1055431533:file = $r6
+831873254:$z0 = virtualinvoke file.<java.io.File: boolean exists()>()
+1175238008:if $z0 != 0 goto $r7 = new pegraph.PEGGenerator
+802275704:virtualinvoke file.<java.io.File: boolean createNewFile()>()
+881867915:$r7 = new pegraph.PEGGenerator
+2090630597:specialinvoke $r7.<pegraph.PEGGenerator: void <init>()>()
+101011565:peg = $r7
+1189291825:$r8 = new java.io.FileWriter
+1316502121:specialinvoke $r8.<java.io.FileWriter: void <init>(java.io.File)>(file)
+927132606:fileWriter = $r8
+662820010:$r9 = new java.lang.StringBuilder
+458198161:specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("method: ")
+1351210405:$r10 = this.<pegraph.datastructure.PegIntra: soot.SootMethod soot_method>
+153709810:$r11 = virtualinvoke $r10.<soot.SootMethod: soot.SootClass getDeclaringClass()>()
+2125432976:$r1 = virtualinvoke $r11.<soot.SootClass: java.lang.String getName()>()
+909043434:$r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1)
+1362424452:$r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".")
+1993391742:$r10 = this.<pegraph.datastructure.PegIntra: soot.SootMethod soot_method>
+42630947:$r1 = virtualinvoke $r10.<soot.SootMethod: java.lang.String getName()>()
+1386271778:$r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1)
+952225141:$r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":")
+1849959673:$r10 = this.<pegraph.datastructure.PegIntra: soot.SootMethod soot_method>
+1003982845:$i0 = virtualinvoke $r10.<java.lang.Object: int hashCode()>()
+1160661436:$r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0)
+160011378:$r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\r\n")
+661704002:$r4 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>()
+1588837448:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>($r4)
+1350666091:$r12 = this.<pegraph.datastructure.PegIntra: java.util.List ceList>
+279423049:l10 = interfaceinvoke $r12.<java.util.List: java.util.Iterator iterator()>()
+1863932201:goto [?= $z0 = interfaceinvoke l10.<java.util.Iterator: boolean hasNext()>()]
+2079544903:$r13 = interfaceinvoke l10.<java.util.Iterator: java.lang.Object next()>()
+1900555655:edge = (pegraph.datastructure.CallEdge) $r13
+218370206:$r9 = new java.lang.StringBuilder
+1919007643:specialinvoke $r9.<java.lang.StringBuilder: void <init>()>()
+1852045255:$r14 = <pegraph.PEGGenerator: java.util.Map mapTable>
+824088903:$r15 = virtualinvoke edge.<pegraph.datastructure.CallEdge: java.lang.String callStr()>()
+1340153218:$r16 = interfaceinvoke $r14.<java.util.Map: java.lang.Object get(java.lang.Object)>($r15)
+1146645190:$r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r16)
+166646026:$r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" -> ")
+501083294:$r14 = <pegraph.PEGGenerator: java.util.Map mapTable>
+361318170:$r15 = virtualinvoke edge.<pegraph.datastructure.CallEdge: java.lang.String receiveStr()>()
+1738213121:$r16 = interfaceinvoke $r14.<java.util.Map: java.lang.Object get(java.lang.Object)>($r15)
+1927874506:$r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r16)
+723356838:$r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\r\n")
+553450599:$r4 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>()
+1092542236:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>($r4)
+378878681:$z0 = interfaceinvoke l10.<java.util.Iterator: boolean hasNext()>()
+524978212:if $z0 != 0 goto $r13 = interfaceinvoke l10.<java.util.Iterator: java.lang.Object next()>()
+1782055404:virtualinvoke fileWriter.<java.io.FileWriter: void close()>()
+50750319:goto [?= return]
+539912441:$r17 := @caughtexception
+409603574:e = $r17
+299564770:virtualinvoke e.<java.lang.Exception: void printStackTrace()>()
+1083420822:return

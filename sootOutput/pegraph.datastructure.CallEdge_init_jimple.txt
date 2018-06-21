@@ -1,0 +1,4 @@
+method: pegraph.datastructure.CallEdge.<init>:1999090638
+88593779:this := @this: pegraph.datastructure.CallEdge
+1573900408:specialinvoke this.<java.lang.Object: void <init>()>()
+1988077157:return

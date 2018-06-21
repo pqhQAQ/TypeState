@@ -1,0 +1,18 @@
+method: pegraph.datastructure.CallInfo.<init>:1057813963
+1276347478:this := @this: pegraph.datastructure.CallInfo
+357912863:base := @parameter0: pegraph.datastructure.Point
+339793194:args := @parameter1: java.util.List
+745194185:rargs := @parameter2: java.util.List
+354037991:hashcode := @parameter3: int
+547157781:specialinvoke this.<java.lang.Object: void <init>()>()
+597135641:$r0 = new java.util.ArrayList
+941868662:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+884640197:this.<pegraph.datastructure.CallInfo: java.util.List args> = $r0
+1752163795:$r0 = new java.util.ArrayList
+126349705:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+1845648699:this.<pegraph.datastructure.CallInfo: java.util.List rargs> = $r0
+1861307614:this.<pegraph.datastructure.CallInfo: pegraph.datastructure.Point base> = base
+817200289:this.<pegraph.datastructure.CallInfo: java.util.List args> = args
+1433916208:this.<pegraph.datastructure.CallInfo: java.util.List rargs> = rargs
+744146638:this.<pegraph.datastructure.CallInfo: int receiverHash> = hashcode
+2075268385:return

@@ -1,0 +1,4 @@
+method: client.IntraGenerator.<init>:1487582791
+1590398914:this := @this: client.IntraGenerator
+724040139:specialinvoke this.<java.lang.Object: void <init>()>()
+1300272271:return

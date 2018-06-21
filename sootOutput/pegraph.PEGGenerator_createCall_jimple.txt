@@ -1,0 +1,80 @@
+method: pegraph.PEGGenerator.createCall:2126436338
+133277533:this := @this: pegraph.PEGGenerator
+170053310:$r0 = <pegraph.PEGGenerator: java.util.List callInfoList>
+566558098:l2 = interfaceinvoke $r0.<java.util.List: java.util.Iterator iterator()>()
+199462288:goto [?= $z0 = interfaceinvoke l2.<java.util.Iterator: boolean hasNext()>()]
+389757996:$r1 = interfaceinvoke l2.<java.util.Iterator: java.lang.Object next()>()
+1513875116:callInfo = (pegraph.datastructure.CallInfo) $r1
+1692696650:$i0 = callInfo.<pegraph.datastructure.CallInfo: int receiverHash>
+1436724741:$z0 = virtualinvoke this.<pegraph.PEGGenerator: boolean callContains(int)>($i0)
+726595119:if $z0 == 0 goto $z0 = interfaceinvoke l2.<java.util.Iterator: boolean hasNext()>()
+2141757401:base = callInfo.<pegraph.datastructure.CallInfo: pegraph.datastructure.Point base>
+99217996:receiverhash = callInfo.<pegraph.datastructure.CallInfo: int receiverHash>
+1109548700:$r2 = new pegraph.datastructure.CallEdge
+1793418393:specialinvoke $r2.<pegraph.datastructure.CallEdge: void <init>()>()
+2049945506:calledge0 = $r2
+1445822835:$r3 = new pegraph.datastructure.Point
+22946832:$i1 = virtualinvoke base.<pegraph.datastructure.Point: int getHashcode()>()
+1267832611:specialinvoke $r3.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>("0", $i1)
+1129947543:virtualinvoke calledge0.<pegraph.datastructure.CallEdge: void addCaller(pegraph.datastructure.Point)>($r3)
+1125335607:$r3 = new pegraph.datastructure.Point
+1307183778:specialinvoke $r3.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>("0", receiverhash)
+1080048036:virtualinvoke calledge0.<pegraph.datastructure.CallEdge: void addReceiver(pegraph.datastructure.Point)>($r3)
+1835556608:$r0 = <pegraph.PEGGenerator: java.util.List inter_graph>
+489396160:$z0 = interfaceinvoke $r0.<java.util.List: boolean contains(java.lang.Object)>(calledge0)
+418893110:if $z0 != 0 goto i = 0
+885104904:$r0 = <pegraph.PEGGenerator: java.util.List inter_graph>
+329900623:interfaceinvoke $r0.<java.util.List: boolean add(java.lang.Object)>(calledge0)
+1125374302:i = 0
+1277414585:goto [?= $r5 = callInfo.<pegraph.datastructure.CallInfo: java.util.List args>]
+113216682:$r0 = callInfo.<pegraph.datastructure.CallInfo: java.util.List args>
+1999711481:$r1 = interfaceinvoke $r0.<java.util.List: java.lang.Object get(int)>(i)
+290415394:call = (pegraph.datastructure.Point) $r1
+1222962200:$r0 = callInfo.<pegraph.datastructure.CallInfo: java.util.List rargs>
+1655066726:$r1 = interfaceinvoke $r0.<java.util.List: java.lang.Object get(int)>(i)
+788967822:receive = (pegraph.datastructure.Point) $r1
+1618147776:$r2 = new pegraph.datastructure.CallEdge
+738355611:specialinvoke $r2.<pegraph.datastructure.CallEdge: void <init>()>()
+1382241711:calledge = $r2
+739090040:$r3 = new pegraph.datastructure.Point
+1729454471:$r4 = virtualinvoke call.<pegraph.datastructure.Point: java.lang.String getName()>()
+1738709374:$i1 = virtualinvoke base.<pegraph.datastructure.Point: int getHashcode()>()
+1678464089:specialinvoke $r3.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>($r4, $i1)
+600756831:virtualinvoke calledge.<pegraph.datastructure.CallEdge: void addCaller(pegraph.datastructure.Point)>($r3)
+1635604991:$r3 = new pegraph.datastructure.Point
+447448451:$r4 = virtualinvoke receive.<pegraph.datastructure.Point: java.lang.String getName()>()
+1186755086:specialinvoke $r3.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>($r4, receiverhash)
+2112100713:virtualinvoke calledge.<pegraph.datastructure.CallEdge: void addReceiver(pegraph.datastructure.Point)>($r3)
+171998481:$r0 = <pegraph.PEGGenerator: java.util.List inter_graph>
+1620758316:$z0 = interfaceinvoke $r0.<java.util.List: boolean contains(java.lang.Object)>(calledge)
+1402438464:if $z0 != 0 goto i = i + 1
+2754976:$r0 = <pegraph.PEGGenerator: java.util.List inter_graph>
+1984477854:interfaceinvoke $r0.<java.util.List: boolean add(java.lang.Object)>(calledge)
+227302418:i = i + 1
+1693505862:$r5 = callInfo.<pegraph.datastructure.CallInfo: java.util.List args>
+4765296:$i0 = interfaceinvoke $r5.<java.util.List: int size()>()
+633434933:if i < $i0 goto $r0 = callInfo.<pegraph.datastructure.CallInfo: java.util.List args>
+1064480752:$r2 = new pegraph.datastructure.CallEdge
+1372358627:specialinvoke $r2.<pegraph.datastructure.CallEdge: void <init>()>()
+1257075209:calledge = $r2
+1119844917:$r3 = new pegraph.datastructure.Point
+1500388715:$i1 = neg receiverhash
+1280149931:specialinvoke $r3.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>(".return", $i1)
+1988714671:virtualinvoke calledge.<pegraph.datastructure.CallEdge: void addCaller(pegraph.datastructure.Point)>($r3)
+152910616:$r3 = new pegraph.datastructure.Point
+579221443:$r4 = virtualinvoke base.<pegraph.datastructure.Point: java.lang.String getName()>()
+982072278:$i1 = virtualinvoke base.<pegraph.datastructure.Point: int getHashcode()>()
+129465504:$i1 = neg $i1
+525791317:specialinvoke $r3.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>($r4, $i1)
+79457414:virtualinvoke calledge.<pegraph.datastructure.CallEdge: void addReceiver(pegraph.datastructure.Point)>($r3)
+1853412311:$r0 = <pegraph.PEGGenerator: java.util.List inter_graph>
+1946165954:$z0 = interfaceinvoke $r0.<java.util.List: boolean contains(java.lang.Object)>(calledge)
+887761421:if $z0 != 0 goto $z0 = interfaceinvoke l2.<java.util.Iterator: boolean hasNext()>()
+2037307038:$r0 = <pegraph.PEGGenerator: java.util.List inter_graph>
+550770621:interfaceinvoke $r0.<java.util.List: boolean add(java.lang.Object)>(calledge)
+849607366:$z0 = interfaceinvoke l2.<java.util.Iterator: boolean hasNext()>()
+732231459:if $z0 != 0 goto $r1 = interfaceinvoke l2.<java.util.Iterator: java.lang.Object next()>()
+1071667918:specialinvoke this.<pegraph.PEGGenerator: void printCall(java.lang.String)>("D:/project/workspace/NPGraph/sootOutput/")
+1001737660:specialinvoke this.<pegraph.PEGGenerator: void printMapCall(java.lang.String)>("D:/project/workspace/NPGraph/sootOutput/")
+728423551:virtualinvoke this.<pegraph.PEGGenerator: void printMap(java.lang.String)>("D:/project/workspace/NPGraph/sootOutput/")
+1957833757:return

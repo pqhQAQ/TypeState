@@ -1,0 +1,161 @@
+method: pegraph.PEGGenerator.internalTransform:296630818
+1868924263:this := @this: pegraph.PEGGenerator
+1914267219:arg0 := @parameter0: soot.Body
+1636634026:arg1 := @parameter1: java.lang.String
+1937524206:arg2 := @parameter2: java.util.Map
+2008554191:$r2 = virtualinvoke arg0.<soot.Body: soot.SootMethod getMethod()>()
+1474840944:this.<pegraph.PEGGenerator: soot.SootMethod sm> = $r2
+1367387251:$r3 = new pegraph.datastructure.PegIntra
+767157975:$r4 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+132269237:specialinvoke $r3.<pegraph.datastructure.PegIntra: void <init>(soot.SootMethod)>($r4)
+403491614:this.<pegraph.PEGGenerator: pegraph.datastructure.PegIntra intra_graph> = $r3
+944626968:$r5 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+2146332552:$z0 = virtualinvoke $r5.<soot.SootMethod: boolean hasActiveBody()>()
+2128382805:if $z0 != 0 goto $r7 = <pegraph.PEGGenerator: java.util.List allMethod>
+1055805843:$r5 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+1263319494:virtualinvoke $r5.<soot.SootMethod: soot.Body retrieveActiveBody()>()
+376697981:$r7 = <pegraph.PEGGenerator: java.util.List allMethod>
+469732976:$r2 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+439917769:interfaceinvoke $r7.<java.util.List: boolean add(java.lang.Object)>($r2)
+2029193347:par = specialinvoke this.<pegraph.PEGGenerator: java.util.List getPar()>()
+1243840615:$z0 = interfaceinvoke par.<java.util.List: boolean isEmpty()>()
+1623396407:if $z0 != 0 goto $r11 = new java.lang.StringBuilder
+643677314:$r8 = <pegraph.PEGGenerator: java.util.Map methodPar>
+346806356:$r2 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+503807334:$i0 = virtualinvoke $r2.<java.lang.Object: int hashCode()>()
+2109326064:$r9 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0)
+2059230609:interfaceinvoke $r8.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r9, par)
+1123499093:$r11 = new java.lang.StringBuilder
+326616371:specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("D:/project/workspace/NPGraph/sootOutput/")
+27246814:$r2 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+523186087:$r12 = virtualinvoke $r2.<soot.SootMethod: soot.SootClass getDeclaringClass()>()
+1390513391:$r13 = virtualinvoke $r12.<soot.SootClass: java.lang.String getName()>()
+1441515883:$r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13)
+1767514797:$r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_")
+1949265511:$r2 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+1442408392:$r13 = virtualinvoke $r2.<soot.SootMethod: java.lang.String getName()>()
+1762437008:$r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13)
+1662108937:$r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_jimple.txt")
+485265262:file_path = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>()
+485748045:regEx = "[`~!@#$%^&*()+=|{}\';\',\\[\\]<>?~\uff01@#\uffe5%\u2026\u2026&*\uff08\uff09\u2014\u2014+|{}\u3010\u3011\u2018\uff1b\uff1a\u201d\u201c\u2019\u3002\uff0c\u3001\uff1f]"
+102719509:p = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>(regEx)
+760127470:m = virtualinvoke p.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(file_path)
+1886876743:$r14 = virtualinvoke m.<java.util.regex.Matcher: java.lang.String replaceAll(java.lang.String)>("")
+586266336:file_path = virtualinvoke $r14.<java.lang.String: java.lang.String trim()>()
+723336716:$r15 = new java.io.File
+748778684:specialinvoke $r15.<java.io.File: void <init>(java.lang.String)>(file_path)
+469170568:file = $r15
+1667720706:$z0 = virtualinvoke file.<java.io.File: boolean exists()>()
+425345098:if $z0 != 0 goto $r16 = new java.io.FileWriter
+642390411:virtualinvoke file.<java.io.File: boolean createNewFile()>()
+667206989:$r16 = new java.io.FileWriter
+1920114500:specialinvoke $r16.<java.io.FileWriter: void <init>(java.io.File)>(file)
+1127638031:fileWriter = $r16
+910221955:br = null
+1460393241:$r17 = new java.lang.StringBuilder
+853096058:specialinvoke $r17.<java.lang.StringBuilder: void <init>(java.lang.String)>("method: ")
+1166028346:$r18 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+1650132347:$r19 = virtualinvoke $r18.<soot.SootMethod: soot.SootClass getDeclaringClass()>()
+1170538671:$r20 = virtualinvoke $r19.<soot.SootClass: java.lang.String getName()>()
+145753330:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r20)
+1380189880:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".")
+70398892:$r18 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+2078171994:$r20 = virtualinvoke $r18.<soot.SootMethod: java.lang.String getName()>()
+1162668350:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r20)
+221329669:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":")
+237767476:$r18 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+1838385712:$i1 = virtualinvoke $r18.<java.lang.Object: int hashCode()>()
+1901432195:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1)
+503596860:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\r\n")
+719373193:$r13 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>()
+172322141:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>($r13)
+1871838971:this.<pegraph.PEGGenerator: boolean call> = 0
+11854753:specialinvoke this.<pegraph.PEGGenerator: void initEntry()>()
+2123009988:$r5 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+988073411:$r6 = virtualinvoke $r5.<soot.SootMethod: soot.Body getActiveBody()>()
+58776426:$r21 = virtualinvoke $r6.<soot.Body: soot.PatchingChain getUnits()>()
+152472387:stmts = virtualinvoke $r21.<soot.PatchingChain: java.util.Iterator iterator()>()
+1157255003:$z0 = interfaceinvoke stmts.<java.util.Iterator: boolean hasNext()>()
+225444542:if $z0 == 0 goto virtualinvoke br.<java.io.BufferedReader: void close()>()
+885264086:$r22 = new java.io.BufferedReader
+1707296101:$r23 = new java.io.InputStreamReader
+1784541205:$r0 = new java.io.FileInputStream
+2053081551:$r1 = new java.io.File
+1795368361:specialinvoke $r1.<java.io.File: void <init>(java.lang.String)>("")
+463319330:specialinvoke $r0.<java.io.FileInputStream: void <init>(java.io.File)>($r1)
+1872978817:specialinvoke $r23.<java.io.InputStreamReader: void <init>(java.io.InputStream,java.lang.String)>($r0, "UTF-8")
+1339679593:specialinvoke $r22.<java.io.BufferedReader: void <init>(java.io.Reader)>($r23)
+1776364403:br = $r22
+1088507879:$r10 = interfaceinvoke stmts.<java.util.Iterator: java.lang.Object next()>()
+1675185925:nowst = (soot.jimple.Stmt) $r10
+650824928:succst = nowst
+1280350725:goto [?= $z0 = interfaceinvoke stmts.<java.util.Iterator: boolean hasNext()>()]
+889056731:$r10 = interfaceinvoke stmts.<java.util.Iterator: java.lang.Object next()>()
+1996158934:succst = (soot.jimple.Stmt) $r10
+2062831056:$r17 = new java.lang.StringBuilder
+1509252860:$i2 = virtualinvoke nowst.<java.lang.Object: int hashCode()>()
+2083463303:$r24 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2)
+2046869186:specialinvoke $r17.<java.lang.StringBuilder: void <init>(java.lang.String)>($r24)
+740544999:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":")
+405752554:$r20 = virtualinvoke nowst.<java.lang.Object: java.lang.String toString()>()
+1222595853:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r20)
+637002959:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\r\n")
+902751618:$r13 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>()
+574477671:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>($r13)
+1269647945:specialinvoke this.<pegraph.PEGGenerator: void processStmt(soot.jimple.Stmt,soot.jimple.Stmt)>(nowst, succst)
+871484051:nowst = succst
+1010576351:$z0 = interfaceinvoke stmts.<java.util.Iterator: boolean hasNext()>()
+308567134:if $z0 != 0 goto $r10 = interfaceinvoke stmts.<java.util.Iterator: java.lang.Object next()>()
+1255344208:virtualinvoke br.<java.io.BufferedReader: java.lang.String readLine()>()
+1153994647:$r17 = new java.lang.StringBuilder
+124078672:$i2 = virtualinvoke succst.<java.lang.Object: int hashCode()>()
+183619067:$r24 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i2)
+151658330:specialinvoke $r17.<java.lang.StringBuilder: void <init>(java.lang.String)>($r24)
+604916923:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":")
+132693029:$r20 = virtualinvoke succst.<java.lang.Object: java.lang.String toString()>()
+1083712817:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r20)
+1998405091:$r17 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\r\n")
+550125357:$r13 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>()
+1039774764:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>($r13)
+1458728408:specialinvoke this.<pegraph.PEGGenerator: void processStmt(soot.jimple.Stmt,soot.jimple.Stmt)>(succst, succst)
+622603116:virtualinvoke br.<java.io.BufferedReader: void close()>()
+1652881992:virtualinvoke fileWriter.<java.io.FileWriter: void close()>()
+139181952:goto [?= $r26 = this.<pegraph.PEGGenerator: pegraph.datastructure.PegIntra intra_graph>]
+1399257398:$r25 := @caughtexception
+621375681:e = $r25
+1470368415:virtualinvoke e.<java.lang.Exception: void printStackTrace()>()
+138884512:$r26 = this.<pegraph.PEGGenerator: pegraph.datastructure.PegIntra intra_graph>
+2064752542:$r7 = $r26.<pegraph.datastructure.PegIntra: java.util.List ceList>
+939867604:l11 = interfaceinvoke $r7.<java.util.List: java.util.Iterator iterator()>()
+1612596743:goto [?= $z0 = interfaceinvoke l11.<java.util.Iterator: boolean hasNext()>()]
+1591487031:$r10 = interfaceinvoke l11.<java.util.Iterator: java.lang.Object next()>()
+1967684818:ce = (pegraph.datastructure.CallEdge) $r10
+1778055973:$r8 = <pegraph.PEGGenerator: java.util.Map mapTable>
+1896583074:$r13 = virtualinvoke ce.<pegraph.datastructure.CallEdge: java.lang.String callStr()>()
+771952297:$z0 = interfaceinvoke $r8.<java.util.Map: boolean containsKey(java.lang.Object)>($r13)
+1253544152:if $z0 != 0 goto $r8 = <pegraph.PEGGenerator: java.util.Map mapTable>
+1501985594:$r8 = <pegraph.PEGGenerator: java.util.Map mapTable>
+1841810192:$r13 = virtualinvoke ce.<pegraph.datastructure.CallEdge: java.lang.String callStr()>()
+1474609086:$r27 = <pegraph.PEGGenerator: java.util.Map mapTable>
+1793622022:$i1 = interfaceinvoke $r27.<java.util.Map: int size()>()
+1177370815:$l3 = (long) $i1
+1156964247:$r28 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l3)
+1690755728:interfaceinvoke $r8.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r13, $r28)
+1336956757:$r8 = <pegraph.PEGGenerator: java.util.Map mapTable>
+1414849395:$r13 = virtualinvoke ce.<pegraph.datastructure.CallEdge: java.lang.String receiveStr()>()
+287358534:$z0 = interfaceinvoke $r8.<java.util.Map: boolean containsKey(java.lang.Object)>($r13)
+2091642482:if $z0 != 0 goto $z0 = interfaceinvoke l11.<java.util.Iterator: boolean hasNext()>()
+2075377231:$r8 = <pegraph.PEGGenerator: java.util.Map mapTable>
+1134792609:$r13 = virtualinvoke ce.<pegraph.datastructure.CallEdge: java.lang.String receiveStr()>()
+657110456:$r27 = <pegraph.PEGGenerator: java.util.Map mapTable>
+1694521118:$i1 = interfaceinvoke $r27.<java.util.Map: int size()>()
+2035787359:$l3 = (long) $i1
+1768678709:$r28 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l3)
+1027903392:interfaceinvoke $r8.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r13, $r28)
+457512741:$z0 = interfaceinvoke l11.<java.util.Iterator: boolean hasNext()>()
+1425181727:if $z0 != 0 goto $r10 = interfaceinvoke l11.<java.util.Iterator: java.lang.Object next()>()
+153840979:$r26 = this.<pegraph.PEGGenerator: pegraph.datastructure.PegIntra intra_graph>
+222134177:virtualinvoke $r26.<pegraph.datastructure.PegIntra: void exportMapGraph(java.lang.String)>("D:/project/workspace/NPGraph/sootOutput/")
+673413487:$r26 = this.<pegraph.PEGGenerator: pegraph.datastructure.PegIntra intra_graph>
+1257903223:virtualinvoke $r26.<pegraph.datastructure.PegIntra: void exportIntraGraph(java.lang.String)>("D:/project/workspace/NPGraph/sootOutput/")
+1750447893:return

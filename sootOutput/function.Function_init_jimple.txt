@@ -1,0 +1,4 @@
+method: function.Function.<init>:2057462116
+1413996757:this := @this: function.Function
+1841231258:specialinvoke this.<java.lang.Object: void <init>()>()
+334399936:return

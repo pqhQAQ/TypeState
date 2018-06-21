@@ -1,0 +1,68 @@
+method: client.IntraGenerator.main:799349963
+834276878:args := @parameter0: java.lang.String[]
+496296677:sp = "D:/project/workspace/NPGraph/lib/"
+1760044542:$r0 = new java.io.File
+505774685:specialinvoke $r0.<java.io.File: void <init>(java.lang.String)>(sp)
+814855969:dirFile = $r0
+1755603184:path = ""
+1343563403:$z0 = virtualinvoke dirFile.<java.io.File: boolean isDirectory()>()
+114380990:if $z0 != 0 goto fileList = virtualinvoke dirFile.<java.io.File: java.lang.String[] list()>()
+403434865:return
+328639588:fileList = virtualinvoke dirFile.<java.io.File: java.lang.String[] list()>()
+1077610384:i = 0
+2027278294:goto [?= $i0 = lengthof fileList]
+2123099420:string = fileList[i]
+646796673:$z0 = virtualinvoke string.<java.lang.String: boolean endsWith(java.lang.String)>(".jar")
+617435214:if $z0 == 0 goto i = i + 1
+592659394:$r1 = new java.lang.StringBuilder
+804872132:$r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(path)
+486430071:specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2)
+1343601734:$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(sp)
+506124966:$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(string)
+1184713508:$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(";")
+914079174:path = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>()
+1479567324:i = i + 1
+794960751:$i0 = lengthof fileList
+937107463:if i < $i0 goto string = fileList[i]
+320063543:$r1 = new java.lang.StringBuilder
+1141170387:$r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(path)
+474242952:specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2)
+2037029452:$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(sp)
+1070662392:$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("test;")
+1915021994:path = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>()
+1437235569:$r3 = staticinvoke <soot.Scene: soot.Scene v()>()
+1689951492:virtualinvoke $r3.<soot.Scene: void setSootClassPath(java.lang.String)>(path)
+396010822:$r4 = staticinvoke <soot.options.Options: soot.options.Options v()>()
+883176408:virtualinvoke $r4.<soot.options.Options: boolean setPhaseOption(java.lang.String,java.lang.String)>("jb", "use-original-names:true")
+122411690:$r4 = staticinvoke <soot.options.Options: soot.options.Options v()>()
+138921192:virtualinvoke $r4.<soot.options.Options: boolean setPhaseOption(java.lang.String,java.lang.String)>("tag", "off")
+1950462461:$r4 = staticinvoke <soot.options.Options: soot.options.Options v()>()
+2096409290:virtualinvoke $r4.<soot.options.Options: void set_output_format(int)>(1)
+586740701:$r4 = staticinvoke <soot.options.Options: soot.options.Options v()>()
+49630171:virtualinvoke $r4.<soot.options.Options: void set_keep_line_number(boolean)>(1)
+910628961:$r4 = staticinvoke <soot.options.Options: soot.options.Options v()>()
+749578296:virtualinvoke $r4.<soot.options.Options: void set_prepend_classpath(boolean)>(1)
+554111943:trans = null
+1470332609:$i1 = <client.IntraGenerator: int Generator_ID>
+1548133626:tableswitch($i1) {     case 0: goto $r5 = new pegraph.PEGGenerator;     case 1: goto goto [?= $r8 = staticinvoke <soot.PackManager: soot.PackManager v()>()];     case 2: goto goto [?= $r8 = staticinvoke <soot.PackManager: soot.PackManager v()>()];     default: goto $r7 = <java.lang.System: java.io.PrintStream err>; }
+569985130:$r5 = new pegraph.PEGGenerator
+589903169:specialinvoke $r5.<pegraph.PEGGenerator: void <init>()>()
+1718046831:peggenerator = $r5
+147971055:$r6 = new soot.Transform
+1925438069:specialinvoke $r6.<soot.Transform: void <init>(java.lang.String,soot.Transformer)>("jtp.peggenerator", peggenerator)
+406549040:trans = $r6
+1724234173:goto [?= $r8 = staticinvoke <soot.PackManager: soot.PackManager v()>()]
+1059412993:goto [?= $r8 = staticinvoke <soot.PackManager: soot.PackManager v()>()]
+767256074:goto [?= $r8 = staticinvoke <soot.PackManager: soot.PackManager v()>()]
+1781019130:$r7 = <java.lang.System: java.io.PrintStream err>
+1860271:virtualinvoke $r7.<java.io.PrintStream: void println(java.lang.String)>("wrong generator!!!")
+2002929814:staticinvoke <java.lang.System: void exit(int)>(0)
+1435217173:$r8 = staticinvoke <soot.PackManager: soot.PackManager v()>()
+948131153:$r9 = virtualinvoke $r8.<soot.PackManager: soot.Pack getPack(java.lang.String)>("jtp")
+1578937219:virtualinvoke $r9.<soot.Pack: void add(soot.Transform)>(trans)
+867974408:staticinvoke <soot.Main: void main(java.lang.String[])>(args)
+189461185:$r5 = new pegraph.PEGGenerator
+459310730:specialinvoke $r5.<pegraph.PEGGenerator: void <init>()>()
+1579211792:peg = $r5
+277639386:virtualinvoke peg.<pegraph.PEGGenerator: void createCall()>()
+1950679218:return

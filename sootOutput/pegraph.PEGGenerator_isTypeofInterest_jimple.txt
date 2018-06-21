@@ -1,0 +1,10 @@
+method: pegraph.PEGGenerator.isTypeofInterest:1715900756
+2137070408:v := @parameter0: soot.Value
+1233802034:$r0 = interfaceinvoke v.<soot.Value: soot.Type getType()>()
+408690006:$z0 = $r0 instanceof soot.RefType
+1200227736:if $z0 != 0 goto return 1
+1420603517:$r0 = interfaceinvoke v.<soot.Value: soot.Type getType()>()
+360122873:$z0 = $r0 instanceof soot.ArrayType
+976209265:if $z0 != 0 goto return 1
+1037161656:return 0
+380412694:return 1

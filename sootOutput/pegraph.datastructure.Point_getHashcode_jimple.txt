@@ -1,0 +1,4 @@
+method: pegraph.datastructure.Point.getHashcode:74966273
+1987592258:this := @this: pegraph.datastructure.Point
+746897859:$i0 = this.<pegraph.datastructure.Point: int hashcode>
+1070399498:return $i0

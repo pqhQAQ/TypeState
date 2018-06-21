@@ -1,0 +1,4 @@
+method: function.DoMove.<init>:1100361227
+253474716:this := @this: function.DoMove
+1058402843:specialinvoke this.<function.Function: void <init>()>()
+969534200:return

@@ -1,0 +1,4 @@
+method: function.Assign.<init>:1663641926
+763309998:this := @this: function.Assign
+1727617626:specialinvoke this.<function.Function: void <init>()>()
+2090532742:return

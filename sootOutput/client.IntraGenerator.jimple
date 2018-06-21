@@ -1,0 +1,131 @@
+public class client.IntraGenerator extends java.lang.Object
+{
+    public static int Generator_ID;
+
+    static void <clinit>()
+    {
+        <client.IntraGenerator: int Generator_ID> = 0;
+        return;
+    }
+
+    public void <init>()
+    {
+        client.IntraGenerator this;
+
+        this := @this: client.IntraGenerator;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args, fileList;
+        java.lang.String sp, path, string, $r2;
+        java.io.File dirFile, $r0;
+        int i, $i0, $i1;
+        soot.Transform trans, $r6;
+        pegraph.PEGGenerator peggenerator, peg, $r5;
+        boolean $z0;
+        java.lang.StringBuilder $r1;
+        soot.Scene $r3;
+        soot.options.Options $r4;
+        java.io.PrintStream $r7;
+        soot.PackManager $r8;
+        soot.Pack $r9;
+
+        args := @parameter0: java.lang.String[];
+        sp = "D:/project/workspace/NPGraph/lib/";
+        $r0 = new java.io.File;
+        specialinvoke $r0.<java.io.File: void <init>(java.lang.String)>(sp);
+        dirFile = $r0;
+        path = "";
+        $z0 = virtualinvoke dirFile.<java.io.File: boolean isDirectory()>();
+        if $z0 != 0 goto label0;
+
+        return;
+
+     label0:
+        fileList = virtualinvoke dirFile.<java.io.File: java.lang.String[] list()>();
+        i = 0;
+        goto label3;
+
+     label1:
+        string = fileList[i];
+        $z0 = virtualinvoke string.<java.lang.String: boolean endsWith(java.lang.String)>(".jar");
+        if $z0 == 0 goto label2;
+
+        $r1 = new java.lang.StringBuilder;
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(path);
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(sp);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(string);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(";");
+        path = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+
+     label2:
+        i = i + 1;
+
+     label3:
+        $i0 = lengthof fileList;
+        if i < $i0 goto label1;
+
+        $r1 = new java.lang.StringBuilder;
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(path);
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(sp);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("test;");
+        path = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r3 = staticinvoke <soot.Scene: soot.Scene v()>();
+        virtualinvoke $r3.<soot.Scene: void setSootClassPath(java.lang.String)>(path);
+        $r4 = staticinvoke <soot.options.Options: soot.options.Options v()>();
+        virtualinvoke $r4.<soot.options.Options: boolean setPhaseOption(java.lang.String,java.lang.String)>("jb", "use-original-names:true");
+        $r4 = staticinvoke <soot.options.Options: soot.options.Options v()>();
+        virtualinvoke $r4.<soot.options.Options: boolean setPhaseOption(java.lang.String,java.lang.String)>("tag", "off");
+        $r4 = staticinvoke <soot.options.Options: soot.options.Options v()>();
+        virtualinvoke $r4.<soot.options.Options: void set_output_format(int)>(1);
+        $r4 = staticinvoke <soot.options.Options: soot.options.Options v()>();
+        virtualinvoke $r4.<soot.options.Options: void set_keep_line_number(boolean)>(1);
+        $r4 = staticinvoke <soot.options.Options: soot.options.Options v()>();
+        virtualinvoke $r4.<soot.options.Options: void set_prepend_classpath(boolean)>(1);
+        trans = null;
+        $i1 = <client.IntraGenerator: int Generator_ID>;
+        tableswitch($i1)
+        {
+            case 0: goto label4;
+            case 1: goto label5;
+            case 2: goto label6;
+            default: goto label7;
+        };
+
+     label4:
+        $r5 = new pegraph.PEGGenerator;
+        specialinvoke $r5.<pegraph.PEGGenerator: void <init>()>();
+        peggenerator = $r5;
+        $r6 = new soot.Transform;
+        specialinvoke $r6.<soot.Transform: void <init>(java.lang.String,soot.Transformer)>("jtp.peggenerator", peggenerator);
+        trans = $r6;
+        goto label8;
+
+     label5:
+        goto label8;
+
+     label6:
+        goto label8;
+
+     label7:
+        $r7 = <java.lang.System: java.io.PrintStream err>;
+        virtualinvoke $r7.<java.io.PrintStream: void println(java.lang.String)>("wrong generator!!!");
+        staticinvoke <java.lang.System: void exit(int)>(0);
+
+     label8:
+        $r8 = staticinvoke <soot.PackManager: soot.PackManager v()>();
+        $r9 = virtualinvoke $r8.<soot.PackManager: soot.Pack getPack(java.lang.String)>("jtp");
+        virtualinvoke $r9.<soot.Pack: void add(soot.Transform)>(trans);
+        staticinvoke <soot.Main: void main(java.lang.String[])>(args);
+        $r5 = new pegraph.PEGGenerator;
+        specialinvoke $r5.<pegraph.PEGGenerator: void <init>()>();
+        peg = $r5;
+        virtualinvoke peg.<pegraph.PEGGenerator: void createCall()>();
+        return;
+    }
+}

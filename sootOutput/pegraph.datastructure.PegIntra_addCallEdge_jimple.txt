@@ -1,0 +1,6 @@
+method: pegraph.datastructure.PegIntra.addCallEdge:2113737065
+922411072:this := @this: pegraph.datastructure.PegIntra
+278439411:calledge := @parameter0: pegraph.datastructure.CallEdge
+547234651:$r0 = this.<pegraph.datastructure.PegIntra: java.util.List ceList>
+32672139:interfaceinvoke $r0.<java.util.List: boolean add(java.lang.Object)>(calledge)
+492810059:return null

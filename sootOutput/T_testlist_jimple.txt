@@ -1,16 +1,25 @@
-method: T.testlist:304166174
-109066362:this := @this: T
-1274795243:$r0 = new java.io.File
-686573449:specialinvoke $r0.<java.io.File: void <init>(java.lang.String)>("")
-810322012:file = $r0
-1888250057:$r1 = new java.io.FileWriter
-1512418737:specialinvoke $r1.<java.io.FileWriter: void <init>(java.io.File)>(file)
-1605266867:fileWriter = $r1
-883176408:$r1 = new java.io.FileWriter
-691258066:specialinvoke $r1.<java.io.FileWriter: void <init>(java.lang.String)>("")
-87784992:fileWriter2 = $r1
-352291287:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>("fw")
-902239314:virtualinvoke fileWriter2.<java.io.FileWriter: void write(java.lang.String)>("test")
-1587779925:virtualinvoke fileWriter.<java.io.FileWriter: void close()>()
-843150152:virtualinvoke fileWriter2.<java.io.FileWriter: void close()>()
-1727501758:return
+method: T.testlist:263985538
+1814904575:this := @this: T
+243470037:$r0 = new java.io.File
+1615383716:specialinvoke $r0.<java.io.File: void <init>(java.lang.String)>("")
+1265849438:file = $r0
+11013637:$r2 = new java.io.FileWriter
+1576090087:specialinvoke $r2.<java.io.FileWriter: void <init>(java.io.File)>(file)
+135306464:fileWriter = $r2
+2058041922:$r2 = new java.io.FileWriter
+1210526743:specialinvoke $r2.<java.io.FileWriter: void <init>(java.lang.String)>("")
+62897923:fileWriter2 = $r2
+563437537:$r3 = new java.io.BufferedReader
+802758144:$r4 = new java.io.InputStreamReader
+1450997446:$r1 = new java.io.FileInputStream
+1479616934:specialinvoke $r1.<java.io.FileInputStream: void <init>(java.io.File)>(file)
+1712689480:specialinvoke $r4.<java.io.InputStreamReader: void <init>(java.io.InputStream,java.lang.String)>($r1, "UTF-8")
+301285972:specialinvoke $r3.<java.io.BufferedReader: void <init>(java.io.Reader)>($r4)
+2094375425:br = $r3
+206113298:virtualinvoke br.<java.io.BufferedReader: java.lang.String readLine()>()
+603846227:virtualinvoke br.<java.io.BufferedReader: void close()>()
+1951182537:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>("fw")
+1140759078:virtualinvoke fileWriter2.<java.io.FileWriter: void write(java.lang.String)>("test")
+1985042947:virtualinvoke fileWriter.<java.io.FileWriter: void close()>()
+1326226577:virtualinvoke fileWriter2.<java.io.FileWriter: void close()>()
+1157307426:return

@@ -1,7 +1,7 @@
-method: T.call:384998655
-2016805035:this := @this: T
-560338997:$r0 = new T
-592147709:specialinvoke $r0.<T: void <init>()>()
-787324965:a = $r0
-492693855:virtualinvoke this.<T: T test(T)>(a)
-1250610188:return
+method: T.call:2145435004
+717862425:this := @this: T
+550648129:$r0 = new T
+2005390829:specialinvoke $r0.<T: void <init>()>()
+1995306985:a = $r0
+1957697945:virtualinvoke this.<T: T test(T)>(a)
+216061557:return

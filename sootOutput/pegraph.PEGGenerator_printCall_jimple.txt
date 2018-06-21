@@ -1,0 +1,37 @@
+method: pegraph.PEGGenerator.printCall:1734879586
+887429386:this := @this: pegraph.PEGGenerator
+751762087:path := @parameter0: java.lang.String
+1219100908:$r0 = new java.lang.StringBuilder
+810884586:$r1 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(path)
+606013040:specialinvoke $r0.<java.lang.StringBuilder: void <init>(java.lang.String)>($r1)
+1862976702:$r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("CallSite.txt")
+1596290200:file_path = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>()
+306257946:regEx = "[`~!@#$%^&*()+=|{}\';\',\\[\\]<>?~\uff01@#\uffe5%\u2026\u2026&*\uff08\uff09\u2014\u2014+|{}\u3010\u3011\u2018\uff1b\uff1a\u201d\u201c\u2019\u3002\uff0c\u3001\uff1f]"
+2066135007:p = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>(regEx)
+1142905435:m = virtualinvoke p.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(file_path)
+969867192:$r2 = virtualinvoke m.<java.util.regex.Matcher: java.lang.String replaceAll(java.lang.String)>("")
+490278113:file_path = virtualinvoke $r2.<java.lang.String: java.lang.String trim()>()
+209491652:$r3 = new java.io.File
+443734067:specialinvoke $r3.<java.io.File: void <init>(java.lang.String)>(file_path)
+1775241685:file = $r3
+1426890057:$z0 = virtualinvoke file.<java.io.File: boolean exists()>()
+791301950:if $z0 != 0 goto $r4 = new java.io.FileWriter
+531741605:virtualinvoke file.<java.io.File: boolean createNewFile()>()
+1629473379:$r4 = new java.io.FileWriter
+1175799888:specialinvoke $r4.<java.io.FileWriter: void <init>(java.io.File)>(file)
+524197922:fileWriter = $r4
+1216555060:$r5 = <pegraph.PEGGenerator: java.util.List inter_graph>
+1603691173:l9 = interfaceinvoke $r5.<java.util.List: java.util.Iterator iterator()>()
+170291114:goto [?= $z0 = interfaceinvoke l9.<java.util.Iterator: boolean hasNext()>()]
+1022193134:$r6 = interfaceinvoke l9.<java.util.Iterator: java.lang.Object next()>()
+1935937485:edge = (pegraph.datastructure.CallEdge) $r6
+220905856:$r7 = virtualinvoke edge.<pegraph.datastructure.CallEdge: java.lang.String print()>()
+1912979776:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>($r7)
+1068694408:$z0 = interfaceinvoke l9.<java.util.Iterator: boolean hasNext()>()
+2141175395:if $z0 != 0 goto $r6 = interfaceinvoke l9.<java.util.Iterator: java.lang.Object next()>()
+1041251030:virtualinvoke fileWriter.<java.io.FileWriter: void close()>()
+461821807:goto [?= return]
+627249894:$r8 := @caughtexception
+833209991:e = $r8
+590402206:virtualinvoke e.<java.lang.Exception: void printStackTrace()>()
+1515427102:return

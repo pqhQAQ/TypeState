@@ -1,0 +1,8 @@
+method: pegraph.datastructure.Point.<init>:1904362781
+1512310188:this := @this: pegraph.datastructure.Point
+1928367471:name := @parameter0: java.lang.String
+248884573:hashcode := @parameter1: int
+505466955:specialinvoke this.<java.lang.Object: void <init>()>()
+841206628:this.<pegraph.datastructure.Point: java.lang.String name> = name
+391996209:this.<pegraph.datastructure.Point: int hashcode> = hashcode
+1947939314:return

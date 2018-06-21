@@ -1,0 +1,14 @@
+method: pegraph.PEGGenerator.callContains:1164613439
+1613852876:this := @this: pegraph.PEGGenerator
+1306825322:hashcode := @parameter0: int
+1497928985:$r0 = <pegraph.PEGGenerator: java.util.List allMethod>
+1036027810:l3 = interfaceinvoke $r0.<java.util.List: java.util.Iterator iterator()>()
+721992794:goto [?= $z0 = interfaceinvoke l3.<java.util.Iterator: boolean hasNext()>()]
+382390961:$r1 = interfaceinvoke l3.<java.util.Iterator: java.lang.Object next()>()
+463598222:m = (soot.SootMethod) $r1
+1522532730:$i0 = virtualinvoke m.<java.lang.Object: int hashCode()>()
+1459808981:if $i0 != hashcode goto $z0 = interfaceinvoke l3.<java.util.Iterator: boolean hasNext()>()
+1014190801:return 1
+1543366591:$z0 = interfaceinvoke l3.<java.util.Iterator: boolean hasNext()>()
+2054806471:if $z0 != 0 goto $r1 = interfaceinvoke l3.<java.util.Iterator: java.lang.Object next()>()
+553202673:return 0

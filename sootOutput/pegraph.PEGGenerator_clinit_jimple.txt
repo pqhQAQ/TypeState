@@ -1,0 +1,20 @@
+method: pegraph.PEGGenerator.<clinit>:1580025618
+1286832600:$r0 = new java.util.ArrayList
+1963916289:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+717414833:<pegraph.PEGGenerator: java.util.List inter_graph> = $r0
+1617903973:$r1 = new java.util.HashMap
+78299307:specialinvoke $r1.<java.util.HashMap: void <init>()>()
+1716460785:<pegraph.PEGGenerator: java.util.Map recordReturn> = $r1
+1408583344:$r0 = new java.util.ArrayList
+1041668417:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+1034394175:<pegraph.PEGGenerator: java.util.List allMethod> = $r0
+1182776760:$r1 = new java.util.HashMap
+1884504054:specialinvoke $r1.<java.util.HashMap: void <init>()>()
+1770809622:<pegraph.PEGGenerator: java.util.Map methodPar> = $r1
+21453181:$r0 = new java.util.ArrayList
+2098896828:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+1592602574:<pegraph.PEGGenerator: java.util.List callInfoList> = $r0
+635285010:$r1 = new java.util.HashMap
+120064195:specialinvoke $r1.<java.util.HashMap: void <init>()>()
+1431780832:<pegraph.PEGGenerator: java.util.Map mapTable> = $r1
+1386178789:return

@@ -1,0 +1,15 @@
+method: pegraph.PEGGenerator.contains:1148635270
+652001804:this := @this: pegraph.PEGGenerator
+1732752834:name := @parameter0: java.lang.String
+393339341:$r0 = this.<pegraph.PEGGenerator: java.util.List objectlocal>
+1943108967:l3 = interfaceinvoke $r0.<java.util.List: java.util.Iterator iterator()>()
+1048588440:goto [?= $z0 = interfaceinvoke l3.<java.util.Iterator: boolean hasNext()>()]
+150523972:$r1 = interfaceinvoke l3.<java.util.Iterator: java.lang.Object next()>()
+728864298:local = (soot.Local) $r1
+1321650743:$r2 = interfaceinvoke local.<soot.Local: java.lang.String getName()>()
+927696302:$z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>(name)
+1060470494:if $z0 == 0 goto $z0 = interfaceinvoke l3.<java.util.Iterator: boolean hasNext()>()
+369046885:return 1
+2091703695:$z0 = interfaceinvoke l3.<java.util.Iterator: boolean hasNext()>()
+956700475:if $z0 != 0 goto $r1 = interfaceinvoke l3.<java.util.Iterator: java.lang.Object next()>()
+852586467:return 0

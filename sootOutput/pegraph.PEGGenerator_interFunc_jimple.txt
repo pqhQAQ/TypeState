@@ -1,0 +1,92 @@
+method: pegraph.PEGGenerator.interFunc:2041218422
+217768275:this := @this: pegraph.PEGGenerator
+719263437:st := @parameter0: soot.jimple.Stmt
+475136696:succst := @parameter1: soot.jimple.Stmt
+575017856:ie = interfaceinvoke st.<soot.jimple.Stmt: soot.jimple.InvokeExpr getInvokeExpr()>()
+753288344:receiver = interfaceinvoke ie.<soot.jimple.InvokeExpr: soot.SootMethod getMethod()>()
+1296626002:$z0 = virtualinvoke receiver.<soot.SootMethod: boolean hasActiveBody()>()
+1876649505:if $z0 != 0 goto $z0 = st instanceof soot.jimple.AssignStmt
+755907046:return
+879634262:$z0 = st instanceof soot.jimple.AssignStmt
+735615486:if $z0 == 0 goto return
+2045049263:$r0 = (soot.jimple.DefinitionStmt) st
+1500730855:lhs = interfaceinvoke $r0.<soot.jimple.DefinitionStmt: soot.Value getLeftOp()>()
+568874296:$r0 = (soot.jimple.DefinitionStmt) st
+1667217760:interfaceinvoke $r0.<soot.jimple.DefinitionStmt: soot.Value getRightOp()>()
+1950472078:$z0 = lhs instanceof soot.Local
+246343491:if $z0 == 0 goto return
+1906330399:$r1 = (soot.Local) lhs
+1386486400:$r2 = interfaceinvoke $r1.<soot.Local: java.lang.String getName()>()
+331871203:$z0 = specialinvoke this.<pegraph.PEGGenerator: boolean contains(java.lang.String)>($r2)
+744277562:if $z0 != 0 goto $r3 = new java.util.ArrayList
+2128224406:return
+579967210:$r3 = new java.util.ArrayList
+2145257149:specialinvoke $r3.<java.util.ArrayList: void <init>()>()
+1233953760:args = $r3
+811265241:$r3 = new java.util.ArrayList
+855928364:specialinvoke $r3.<java.util.ArrayList: void <init>()>()
+1742546142:rargs = $r3
+549944103:$r4 = virtualinvoke receiver.<soot.SootMethod: soot.Body getActiveBody()>()
+140922433:$r5 = virtualinvoke $r4.<soot.Body: soot.util.Chain getLocals()>()
+293289442:l10 = interfaceinvoke $r5.<soot.util.Chain: java.util.Iterator iterator()>()
+840681829:goto [?= $z0 = interfaceinvoke l10.<java.util.Iterator: boolean hasNext()>()]
+684642505:$r6 = interfaceinvoke l10.<java.util.Iterator: java.lang.Object next()>()
+1667513825:local = (soot.Local) $r6
+512498665:$r7 = interfaceinvoke local.<soot.Local: java.lang.String getName()>()
+1761850405:$z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("this")
+1915231999:if $z0 == 0 goto $z0 = interfaceinvoke l10.<java.util.Iterator: boolean hasNext()>()
+1996031891:$z0 = ie instanceof soot.jimple.InstanceInvokeExpr
+1465942250:if $z0 == 0 goto $z0 = interfaceinvoke l10.<java.util.Iterator: boolean hasNext()>()
+237547003:$r8 = new pegraph.datastructure.Point
+1585443206:$r9 = interfaceinvoke st.<soot.jimple.Stmt: soot.jimple.InvokeExpr getInvokeExpr()>()
+566871266:$r10 = (soot.jimple.InstanceInvokeExpr) $r9
+1167909570:$r11 = interfaceinvoke $r10.<soot.jimple.InstanceInvokeExpr: soot.Value getBase()>()
+1055609410:$r12 = (soot.Local) $r11
+1264946003:$r13 = interfaceinvoke $r12.<soot.Local: java.lang.String getName()>()
+762697994:$i0 = virtualinvoke st.<java.lang.Object: int hashCode()>()
+335296215:specialinvoke $r8.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>($r13, $i0)
+562266264:interfaceinvoke args.<java.util.List: boolean add(java.lang.Object)>($r8)
+522231979:$r8 = new pegraph.datastructure.Point
+135278580:$i0 = virtualinvoke receiver.<java.lang.Object: int hashCode()>()
+1589395534:specialinvoke $r8.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>("this", $i0)
+1081052248:interfaceinvoke rargs.<java.util.List: boolean add(java.lang.Object)>($r8)
+1209928554:goto [?= i = 0]
+1727477671:$z0 = interfaceinvoke l10.<java.util.Iterator: boolean hasNext()>()
+1885792704:if $z0 != 0 goto $r6 = interfaceinvoke l10.<java.util.Iterator: java.lang.Object next()>()
+388008649:i = 0
+1501011451:goto [?= $i1 = interfaceinvoke ie.<soot.jimple.InvokeExpr: int getArgCount()>()]
+42430058:arg = interfaceinvoke ie.<soot.jimple.InvokeExpr: soot.Value getArg(int)>(i)
+2104762157:$z0 = arg instanceof soot.Local
+1386939315:if $z0 == 0 goto i = i + 1
+2094942626:$r1 = (soot.Local) arg
+1706322617:$r2 = interfaceinvoke $r1.<soot.Local: java.lang.String getName()>()
+667601881:$z0 = specialinvoke this.<pegraph.PEGGenerator: boolean contains(java.lang.String)>($r2)
+1930242039:if $z0 == 0 goto i = i + 1
+839698815:$r4 = virtualinvoke receiver.<soot.SootMethod: soot.Body getActiveBody()>()
+1406306724:rarg = virtualinvoke $r4.<soot.Body: soot.Local getParameterLocal(int)>(i)
+1988187951:$r8 = new pegraph.datastructure.Point
+643467564:$r12 = (soot.Local) arg
+31701856:$r13 = interfaceinvoke $r12.<soot.Local: java.lang.String getName()>()
+39241320:$i0 = virtualinvoke st.<java.lang.Object: int hashCode()>()
+251385611:specialinvoke $r8.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>($r13, $i0)
+1533478516:interfaceinvoke args.<java.util.List: boolean add(java.lang.Object)>($r8)
+1393302217:$r8 = new pegraph.datastructure.Point
+1269891051:$r13 = interfaceinvoke rarg.<soot.Local: java.lang.String getName()>()
+67303679:$i0 = virtualinvoke receiver.<java.lang.Object: int hashCode()>()
+1596534631:specialinvoke $r8.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>($r13, $i0)
+1222170765:interfaceinvoke rargs.<java.util.List: boolean add(java.lang.Object)>($r8)
+541774655:i = i + 1
+1607129451:$i1 = interfaceinvoke ie.<soot.jimple.InvokeExpr: int getArgCount()>()
+2122854638:if i < $i1 goto arg = interfaceinvoke ie.<soot.jimple.InvokeExpr: soot.Value getArg(int)>(i)
+524589608:$r14 = <pegraph.PEGGenerator: java.util.List callInfoList>
+1357170721:$r15 = new pegraph.datastructure.CallInfo
+1660018131:$r16 = new pegraph.datastructure.Point
+1554460065:$r17 = (soot.Local) lhs
+1671746700:$r18 = interfaceinvoke $r17.<soot.Local: java.lang.String getName()>()
+544681939:$i2 = virtualinvoke st.<java.lang.Object: int hashCode()>()
+1894045259:specialinvoke $r16.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>($r18, $i2)
+1952779193:$r19 = interfaceinvoke ie.<soot.jimple.InvokeExpr: soot.SootMethod getMethod()>()
+367319650:$i2 = virtualinvoke $r19.<java.lang.Object: int hashCode()>()
+1673356072:specialinvoke $r15.<pegraph.datastructure.CallInfo: void <init>(pegraph.datastructure.Point,java.util.List,java.util.List,int)>($r16, args, rargs, $i2)
+342963800:interfaceinvoke $r14.<java.util.List: boolean add(java.lang.Object)>($r15)
+1998395065:return

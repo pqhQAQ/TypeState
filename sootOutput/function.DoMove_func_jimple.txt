@@ -1,0 +1,11 @@
+method: function.DoMove.func:1789457872
+380431280:this := @this: function.DoMove
+849705841:rop := @parameter0: soot.Local
+239817137:lop := @parameter1: soot.Local
+1927299787:rub := @parameter2: java.util.List
+1631672408:$r0 = new java.util.ArrayList
+1122175979:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+1210291099:list = $r0
+368984593:if rop == null goto return list
+1556616873:interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(rop)
+538764094:return list

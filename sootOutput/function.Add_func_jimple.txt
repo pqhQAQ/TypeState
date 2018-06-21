@@ -1,0 +1,16 @@
+method: function.Add.func:1763624260
+1185401853:this := @this: function.Add
+843150152:rop := @parameter0: soot.Local
+1727501758:lop := @parameter1: soot.Local
+143139266:rub := @parameter2: java.util.List
+559959022:$r0 = new java.util.ArrayList
+439569641:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+503210607:list = $r0
+301285972:interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(lop)
+1280161282:if rop == null goto return list
+1075460017:$r1 = interfaceinvoke rop.<soot.Local: java.lang.String getName()>()
+1873876976:$r2 = interfaceinvoke lop.<soot.Local: java.lang.String getName()>()
+1402652377:$z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>($r2)
+1450507120:if $z0 != 0 goto return list
+2094375425:interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(rop)
+1016854516:return list

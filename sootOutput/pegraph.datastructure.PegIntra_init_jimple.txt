@@ -1,0 +1,9 @@
+method: pegraph.datastructure.PegIntra.<init>:1809646275
+584265946:this := @this: pegraph.datastructure.PegIntra
+1462520338:sm := @parameter0: soot.SootMethod
+805125732:specialinvoke this.<java.lang.Object: void <init>()>()
+2071092589:$r0 = new java.util.ArrayList
+422546775:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+15226796:this.<pegraph.datastructure.PegIntra: java.util.List ceList> = $r0
+209547252:this.<pegraph.datastructure.PegIntra: soot.SootMethod soot_method> = sm
+2134966931:return

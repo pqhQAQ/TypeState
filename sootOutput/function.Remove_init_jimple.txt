@@ -1,0 +1,4 @@
+method: function.Remove.<init>:1990714179
+197319618:this := @this: function.Remove
+234020940:specialinvoke this.<function.Function: void <init>()>()
+1147380923:return

@@ -1,0 +1,4 @@
+method: pegraph.datastructure.Point.getName:528985379
+1155480155:this := @this: pegraph.datastructure.Point
+1786755554:$r0 = this.<pegraph.datastructure.Point: java.lang.String name>
+1736760077:return $r0

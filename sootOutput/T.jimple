@@ -125,18 +125,30 @@ class T extends java.lang.Object
     {
         T this;
         java.io.File $r0, file;
-        java.io.FileWriter fileWriter, fileWriter2, $r1;
+        java.io.FileWriter fileWriter, fileWriter2, $r2;
+        java.io.FileInputStream $r1;
+        java.io.BufferedReader br, $r3;
+        java.io.InputStreamReader $r4;
 
         this := @this: T;
         $r0 = new java.io.File;
         specialinvoke $r0.<java.io.File: void <init>(java.lang.String)>("");
         file = $r0;
-        $r1 = new java.io.FileWriter;
-        specialinvoke $r1.<java.io.FileWriter: void <init>(java.io.File)>(file);
-        fileWriter = $r1;
-        $r1 = new java.io.FileWriter;
-        specialinvoke $r1.<java.io.FileWriter: void <init>(java.lang.String)>("");
-        fileWriter2 = $r1;
+        $r2 = new java.io.FileWriter;
+        specialinvoke $r2.<java.io.FileWriter: void <init>(java.io.File)>(file);
+        fileWriter = $r2;
+        $r2 = new java.io.FileWriter;
+        specialinvoke $r2.<java.io.FileWriter: void <init>(java.lang.String)>("");
+        fileWriter2 = $r2;
+        $r3 = new java.io.BufferedReader;
+        $r4 = new java.io.InputStreamReader;
+        $r1 = new java.io.FileInputStream;
+        specialinvoke $r1.<java.io.FileInputStream: void <init>(java.io.File)>(file);
+        specialinvoke $r4.<java.io.InputStreamReader: void <init>(java.io.InputStream,java.lang.String)>($r1, "UTF-8");
+        specialinvoke $r3.<java.io.BufferedReader: void <init>(java.io.Reader)>($r4);
+        br = $r3;
+        virtualinvoke br.<java.io.BufferedReader: java.lang.String readLine()>();
+        virtualinvoke br.<java.io.BufferedReader: void close()>();
         virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>("fw");
         virtualinvoke fileWriter2.<java.io.FileWriter: void write(java.lang.String)>("test");
         virtualinvoke fileWriter.<java.io.FileWriter: void close()>();

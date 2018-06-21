@@ -1,0 +1,8 @@
+method: pegraph.datastructure.PegIntra.contains:876777476
+1945421262:this := @this: pegraph.datastructure.PegIntra
+1256624859:calledge := @parameter0: pegraph.datastructure.CallEdge
+1027738753:$r0 = this.<pegraph.datastructure.PegIntra: java.util.List ceList>
+770164643:$z0 = interfaceinvoke $r0.<java.util.List: boolean contains(java.lang.Object)>(calledge)
+1273214432:if $z0 == 0 goto return 0
+466514498:return 1
+437312607:return 0

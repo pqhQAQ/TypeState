@@ -1,0 +1,15 @@
+method: function.Assign.contains:447271561
+128929903:this := @this: function.Assign
+113879898:rub := @parameter0: java.util.List
+571516209:name := @parameter1: java.lang.String
+517820474:l4 = interfaceinvoke rub.<java.util.List: java.util.Iterator iterator()>()
+1404968874:goto [?= $z0 = interfaceinvoke l4.<java.util.Iterator: boolean hasNext()>()]
+206061420:$r0 = interfaceinvoke l4.<java.util.Iterator: java.lang.Object next()>()
+32601103:local = (soot.Local) $r0
+2103777075:$r1 = interfaceinvoke local.<soot.Local: java.lang.String getName()>()
+411887274:$z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>(name)
+1249619837:if $z0 == 0 goto $z0 = interfaceinvoke l4.<java.util.Iterator: boolean hasNext()>()
+813475250:return 1
+202312705:$z0 = interfaceinvoke l4.<java.util.Iterator: boolean hasNext()>()
+803019734:if $z0 != 0 goto $r0 = interfaceinvoke l4.<java.util.Iterator: java.lang.Object next()>()
+1386573733:return 0

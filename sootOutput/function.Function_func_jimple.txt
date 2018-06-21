@@ -1,0 +1,9 @@
+method: function.Function.func:984099618
+1875663709:this := @this: function.Function
+1367502850:rop := @parameter0: soot.Local
+1250409756:lop := @parameter1: soot.Local
+361799550:rub := @parameter2: java.util.List
+1238832193:$r0 = new java.util.ArrayList
+1176322895:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+724441983:list = $r0
+175812855:return list

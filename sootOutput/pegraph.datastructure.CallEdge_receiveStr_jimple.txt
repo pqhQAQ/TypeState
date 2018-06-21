@@ -1,0 +1,14 @@
+method: pegraph.datastructure.CallEdge.receiveStr:1815981756
+1757158082:this := @this: pegraph.datastructure.CallEdge
+360770630:$r0 = new java.lang.StringBuilder
+256957414:$r1 = this.<pegraph.datastructure.CallEdge: pegraph.datastructure.Point receiver>
+93642981:$r2 = virtualinvoke $r1.<pegraph.datastructure.Point: java.lang.String getName()>()
+1899552063:$r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r2)
+1279626539:specialinvoke $r0.<java.lang.StringBuilder: void <init>(java.lang.String)>($r2)
+1265630343:$r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("(")
+1986630302:$r3 = this.<pegraph.datastructure.CallEdge: pegraph.datastructure.Point receiver>
+219742158:$i0 = virtualinvoke $r3.<pegraph.datastructure.Point: int getHashcode()>()
+1682060313:$r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0)
+204916966:$r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")")
+1623161421:$r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>()
+989234906:return $r4

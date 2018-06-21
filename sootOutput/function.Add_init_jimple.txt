@@ -1,0 +1,4 @@
+method: function.Add.<init>:365152877
+533749655:this := @this: function.Add
+87784992:specialinvoke this.<function.Function: void <init>()>()
+81095055:return

@@ -1,7 +1,7 @@
-method: T.interfunc:432342307
-395943986:this := @this: T
-315741902:a := @parameter0: T
-242055177:b := @parameter1: T
-1269554979:if a == null goto return null
-715086808:return a
-117417953:return null
+method: T.interfunc:1462520338
+2016805035:this := @this: T
+901730484:a := @parameter0: T
+592147709:b := @parameter1: T
+1923937588:if a == null goto return null
+94770766:return a
+2019222142:return null

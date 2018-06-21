@@ -1,0 +1,47 @@
+method: pegraph.PEGGenerator.printMap:938819633
+595289259:this := @this: pegraph.PEGGenerator
+2047748287:path := @parameter0: java.lang.String
+932532787:$r0 = new java.lang.StringBuilder
+2101457259:$r1 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(path)
+1676093451:specialinvoke $r0.<java.lang.StringBuilder: void <init>(java.lang.String)>($r1)
+570771924:$r0 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("MapTable.txt")
+895885904:file_path = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>()
+517116146:regEx = "[`~!@#$%^&*()+=|{}\';\',\\[\\]<>?~\uff01@#\uffe5%\u2026\u2026&*\uff08\uff09\u2014\u2014+|{}\u3010\u3011\u2018\uff1b\uff1a\u201d\u201c\u2019\u3002\uff0c\u3001\uff1f]"
+237476994:p = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>(regEx)
+1346223514:m = virtualinvoke p.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(file_path)
+91267678:$r2 = virtualinvoke m.<java.util.regex.Matcher: java.lang.String replaceAll(java.lang.String)>("")
+1058887066:file_path = virtualinvoke $r2.<java.lang.String: java.lang.String trim()>()
+517935573:$r3 = new java.io.File
+1101517704:specialinvoke $r3.<java.io.File: void <init>(java.lang.String)>(file_path)
+1899013988:file = $r3
+1362477959:$z0 = virtualinvoke file.<java.io.File: boolean exists()>()
+548928952:if $z0 != 0 goto $r4 = new java.io.FileWriter
+161385442:virtualinvoke file.<java.io.File: boolean createNewFile()>()
+539879024:$r4 = new java.io.FileWriter
+1880895191:specialinvoke $r4.<java.io.FileWriter: void <init>(java.io.File)>(file)
+1246191297:fileWriter = $r4
+329119488:$r5 = <pegraph.PEGGenerator: java.util.Map mapTable>
+1740843791:$r6 = interfaceinvoke $r5.<java.util.Map: java.util.Set entrySet()>()
+1655504532:l9 = interfaceinvoke $r6.<java.util.Set: java.util.Iterator iterator()>()
+1266538792:goto [?= $z0 = interfaceinvoke l9.<java.util.Iterator: boolean hasNext()>()]
+638227191:$r7 = interfaceinvoke l9.<java.util.Iterator: java.lang.Object next()>()
+79384088:entry = (java.util.Map$Entry) $r7
+750078383:$r8 = new java.lang.StringBuilder
+554575913:$r9 = interfaceinvoke entry.<java.util.Map$Entry: java.lang.Object getKey()>()
+678341811:$r10 = (java.lang.String) $r9
+2047619201:$r10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r10)
+910468032:specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>($r10)
+224071671:$r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" <-> ")
+2123610602:$r11 = interfaceinvoke entry.<java.util.Map$Entry: java.lang.Object getValue()>()
+345174674:$r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11)
+302791915:$r8 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\r\n")
+1634955662:$r12 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>()
+1646547869:virtualinvoke fileWriter.<java.io.FileWriter: void write(java.lang.String)>($r12)
+1632310573:$z0 = interfaceinvoke l9.<java.util.Iterator: boolean hasNext()>()
+140209986:if $z0 != 0 goto $r7 = interfaceinvoke l9.<java.util.Iterator: java.lang.Object next()>()
+932060097:virtualinvoke fileWriter.<java.io.FileWriter: void close()>()
+1388329061:goto [?= return]
+962074744:$r13 := @caughtexception
+1236703572:e = $r13
+965579384:virtualinvoke e.<java.lang.Exception: void printStackTrace()>()
+2106270156:return

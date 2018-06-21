@@ -1,0 +1,5 @@
+method: pegraph.datastructure.CallEdge.addReceiver:1334695551
+642478754:this := @this: pegraph.datastructure.CallEdge
+592641362:base := @parameter0: pegraph.datastructure.Point
+182531779:this.<pegraph.datastructure.CallEdge: pegraph.datastructure.Point receiver> = base
+1204961737:return

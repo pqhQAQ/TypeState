@@ -1,0 +1,71 @@
+method: pegraph.PEGGenerator.RF:647931416
+1319759135:this := @this: pegraph.PEGGenerator
+1980675729:lop := @parameter0: soot.Local
+1072965156:rub := @parameter1: java.util.List
+905193033:f := @parameter2: function.Function
+805150283:caller := @parameter3: int
+866346634:receiver := @parameter4: int
+748750978:$r0 = new java.util.ArrayList
+1108429113:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+2094948113:result = $r0
+1147236197:interfaceinvoke result.<java.util.List: boolean add(java.lang.Object)>("0,0")
+1257871771:fnull = virtualinvoke f.<function.Function: java.util.List func(soot.Local,soot.Local,java.util.List)>(null, lop, rub)
+1731928495:l9 = interfaceinvoke fnull.<java.util.List: java.util.Iterator iterator()>()
+1528864027:goto [?= $z0 = interfaceinvoke l9.<java.util.Iterator: boolean hasNext()>()]
+1037737099:$r1 = interfaceinvoke l9.<java.util.Iterator: java.lang.Object next()>()
+1452914277:l = (soot.Local) $r1
+769244863:$r2 = new java.lang.StringBuilder
+1189682735:specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("0,")
+1189732970:$r3 = interfaceinvoke l.<soot.Local: java.lang.String getName()>()
+621789573:$r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3)
+761927109:$r4 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>()
+1490580213:interfaceinvoke result.<java.util.List: boolean add(java.lang.Object)>($r4)
+126491779:$z0 = interfaceinvoke l9.<java.util.Iterator: boolean hasNext()>()
+2086002770:if $z0 != 0 goto $r1 = interfaceinvoke l9.<java.util.Iterator: java.lang.Object next()>()
+915510800:$r5 = this.<pegraph.PEGGenerator: java.util.List objectlocal>
+1402694745:l9 = interfaceinvoke $r5.<java.util.List: java.util.Iterator iterator()>()
+15102449:goto [?= $z0 = interfaceinvoke l9.<java.util.Iterator: boolean hasNext()>()]
+1582706127:$r1 = interfaceinvoke l9.<java.util.Iterator: java.lang.Object next()>()
+485797662:ol = (soot.Local) $r1
+1699966644:fy = virtualinvoke f.<function.Function: java.util.List func(soot.Local,soot.Local,java.util.List)>(ol, lop, rub)
+1633009591:l12 = interfaceinvoke fy.<java.util.List: java.util.Iterator iterator()>()
+1151187277:goto [?= $z0 = interfaceinvoke l12.<java.util.Iterator: boolean hasNext()>()]
+333148657:$r1 = interfaceinvoke l12.<java.util.Iterator: java.lang.Object next()>()
+997820454:y = (soot.Local) $r1
+1368944227:$z0 = interfaceinvoke fnull.<java.util.List: boolean contains(java.lang.Object)>(y)
+1853312878:if $z0 != 0 goto $z0 = interfaceinvoke l12.<java.util.Iterator: boolean hasNext()>()
+1523351250:$r2 = new java.lang.StringBuilder
+155599386:$r6 = interfaceinvoke ol.<soot.Local: java.lang.String getName()>()
+1671282103:$r6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r6)
+152202361:specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>($r6)
+1967326322:$r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",")
+2043782634:$r3 = interfaceinvoke y.<soot.Local: java.lang.String getName()>()
+853795873:$r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3)
+261508257:$r4 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>()
+1784897636:interfaceinvoke result.<java.util.List: boolean add(java.lang.Object)>($r4)
+1228621094:$z0 = interfaceinvoke l12.<java.util.Iterator: boolean hasNext()>()
+1379460953:if $z0 != 0 goto $r1 = interfaceinvoke l12.<java.util.Iterator: java.lang.Object next()>()
+1261612723:$z0 = interfaceinvoke l9.<java.util.Iterator: boolean hasNext()>()
+1818988630:if $z0 != 0 goto $r1 = interfaceinvoke l9.<java.util.Iterator: java.lang.Object next()>()
+1804427607:l9 = interfaceinvoke result.<java.util.List: java.util.Iterator iterator()>()
+250727915:goto [?= $z0 = interfaceinvoke l9.<java.util.Iterator: boolean hasNext()>()]
+783504670:$r1 = interfaceinvoke l9.<java.util.Iterator: java.lang.Object next()>()
+626295093:s = (java.lang.String) $r1
+1149834254:$r7 = virtualinvoke s.<java.lang.String: java.lang.String[] split(java.lang.String)>(",")
+2071367535:s1 = $r7[0]
+1434533604:$r7 = virtualinvoke s.<java.lang.String: java.lang.String[] split(java.lang.String)>(",")
+107421870:s2 = $r7[1]
+1553105610:$r8 = new pegraph.datastructure.CallEdge
+1486365718:specialinvoke $r8.<pegraph.datastructure.CallEdge: void <init>()>()
+1818840522:calledge = $r8
+534813405:$r9 = new pegraph.datastructure.Point
+1627103504:specialinvoke $r9.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>(s1, caller)
+671830830:virtualinvoke calledge.<pegraph.datastructure.CallEdge: void addCaller(pegraph.datastructure.Point)>($r9)
+825895443:$r9 = new pegraph.datastructure.Point
+1904658203:specialinvoke $r9.<pegraph.datastructure.Point: void <init>(java.lang.String,int)>(s2, receiver)
+1199175639:virtualinvoke calledge.<pegraph.datastructure.CallEdge: void addReceiver(pegraph.datastructure.Point)>($r9)
+320464694:$r10 = this.<pegraph.PEGGenerator: pegraph.datastructure.PegIntra intra_graph>
+575503309:virtualinvoke $r10.<pegraph.datastructure.PegIntra: pegraph.datastructure.CallEdge addCallEdge(pegraph.datastructure.CallEdge)>(calledge)
+1525821837:$z0 = interfaceinvoke l9.<java.util.Iterator: boolean hasNext()>()
+1385385632:if $z0 != 0 goto $r1 = interfaceinvoke l9.<java.util.Iterator: java.lang.Object next()>()
+1158616250:return

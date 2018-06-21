@@ -1,0 +1,5 @@
+method: pegraph.datastructure.CallEdge.addCaller:1761432742
+1800369042:this := @this: pegraph.datastructure.CallEdge
+757902664:arg := @parameter0: pegraph.datastructure.Point
+1340446430:this.<pegraph.datastructure.CallEdge: pegraph.datastructure.Point caller> = arg
+1779691980:return

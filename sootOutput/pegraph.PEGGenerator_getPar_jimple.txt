@@ -1,0 +1,16 @@
+method: pegraph.PEGGenerator.getPar:1133386558
+327282241:this := @this: pegraph.PEGGenerator
+927004520:$r0 = new java.util.ArrayList
+342561252:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+23304757:par = $r0
+405861461:$r1 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+1873666443:parnum = virtualinvoke $r1.<soot.SootMethod: int getParameterCount()>()
+1353545774:i = 0
+749550947:goto [?= (branch)]
+1738446583:$r2 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+1556703046:$r3 = virtualinvoke $r2.<soot.SootMethod: soot.Body getActiveBody()>()
+1001950529:$r4 = virtualinvoke $r3.<soot.Body: soot.Local getParameterLocal(int)>(i)
+49015648:interfaceinvoke par.<java.util.List: boolean add(java.lang.Object)>($r4)
+619611273:i = i + 1
+1225868904:if i < parnum goto $r2 = this.<pegraph.PEGGenerator: soot.SootMethod sm>
+398674748:return par

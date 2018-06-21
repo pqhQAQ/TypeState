@@ -1,0 +1,7 @@
+method: pegraph.PEGGenerator.<init>:1855266571
+1699123922:this := @this: pegraph.PEGGenerator
+1032986284:specialinvoke this.<soot.BodyTransformer: void <init>()>()
+2103650406:$r0 = new java.util.ArrayList
+927098007:specialinvoke $r0.<java.util.ArrayList: void <init>()>()
+1742344664:this.<pegraph.PEGGenerator: java.util.List objectlocal> = $r0
+499757356:return
